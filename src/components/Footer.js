@@ -22,8 +22,8 @@ export default function Footer() {
 
           <div className="footer-col">
             <h4>Get In Touch</h4>
-            <a className="socials" href="mailto:pastelpixelsstudio6@gmail.com">
-              pastelpixelsstudio6@gmail.com →
+            <a className="socials" href="mailto:hellopastelpixelsstudio@gmail.com">
+              hellopastelpixelsstudio@gmail.com →
             </a>
           </div>
 

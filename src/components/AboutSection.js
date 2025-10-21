@@ -24,7 +24,7 @@ export default function AboutSection() {
         </div>
 
         <Link
-          href="mailto:pastelpixelsstudio6@gmail.com"
+          href="mailto:hellopastelpixelsstudio@gmail.com"
           className="about-link"
         >
           Get in touch →
