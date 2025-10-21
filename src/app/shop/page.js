@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 
 import Link from "next/link";
@@ -23,7 +25,6 @@ const templates = {
       link: "https://sensitive-work-982584.framer.app",
       buy: "https://yourstore.com/buy/wellness-coach",
     },
-    
   ],
   kajabi: [
     // {
@@ -64,6 +65,19 @@ export default function TemplatesPage() {
           name="description"
           content="Shop Framer, Kajabi and HTML templates for creatives and coaches."
         />
+        <meta property="og:title" content="Templates – Pastel Pixels Studio" />
+        <meta
+          property="og:description"
+          content="Browse our library of minimal, soft and functional templates for Framer, Kajabi, and HTML."
+        />
+        <meta
+          property="og:image"
+          content="https://www.pastelpixelsstudio.com/images/og-templates.jpg"
+        />
+        <meta
+          property="og:url"
+          content="https://www.pastelpixelsstudio.com/templates"
+        />
       </Head>
 
       <main>
@@ -100,7 +114,7 @@ export default function TemplatesPage() {
 }
 
 function TemplateSection({ id, title, items }) {
-   const sectionRef = useRef(null);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     if (!sectionRef.current) return;

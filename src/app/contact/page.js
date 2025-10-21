@@ -1,10 +1,13 @@
-'use client';
+/** @format */
 
-import { useState } from 'react';
-import emailjs from '@emailjs/browser';
+"use client";
+
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import Head from "next/head";
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -14,37 +17,61 @@ export default function ContactPage() {
     e.preventDefault();
 
     const templateParams = {
-    name: form.name,
-    email: form.email,
-    message: form.message,
-  };
+      name: form.name,
+      email: form.email,
+      message: form.message,
+    };
 
     emailjs
       .send(
-        'service_rb1fe9j',
-        'template_ogr0vc3',
+        "service_rb1fe9j",
+        "template_ogr0vc3",
         templateParams,
-        'lMcinPo6T7lEHtDwF'
+        "lMcinPo6T7lEHtDwF"
       )
       .then(
         (response) => {
-          alert('Message sent successfully!');
-          setForm({ name: '', email: '', message: '' });
+          alert("Message sent successfully!");
+          setForm({ name: "", email: "", message: "" });
         },
         (error) => {
-          alert('Message failed to send.');
+          alert("Message failed to send.");
           console.error(error);
         }
       );
   };
 
   return (
+    <>
+      <Head>
+        <title>Contact — Pastel Pixels Studio</title>
+        <meta
+          name="description"
+          content="Get in touch with Pastel Pixels Studio. We love to collaborate with creatives and coaches worldwide."
+        />
+        <meta property="og:title" content="Contact – Pastel Pixels Studio" />
+        <meta
+          property="og:description"
+          content="Let’s connect! Reach out for custom work, questions, or collaborations."
+        />
+        <meta
+          property="og:image"
+          content="https://www.pastelpixelsstudio.com/images/og-contact.jpg"
+        />
+        <meta
+          property="og:url"
+          content="https://www.pastelpixelsstudio.com/contact"
+        />
+      </Head>
       <section className="contact-wrapper">
         <div className="contact-text">
           <h2>Contact Us</h2>
           <p>
-            We love to collaborate with progressive brands<br />
-            and individuals all across the world.<br /><br />
+            We love to collaborate with progressive brands
+            <br />
+            and individuals all across the world.
+            <br />
+            <br />
             Let’s have a chat!
           </p>
         </div>
@@ -77,5 +104,6 @@ export default function ContactPage() {
           <button type="submit">Submit</button>
         </form>
       </section>
+    </>
   );
 }
